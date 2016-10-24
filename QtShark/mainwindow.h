@@ -15,7 +15,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_connectButton_clicked();
+
+    void on_serverIpLineEdit_returnPressed();
+
+
 private:
+    void handle_start_connect();
     Ui::MainWindow *ui;
 };
 
