@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include <string>
 
+#include "ipaddressstring.h"
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -14,18 +17,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-class IpAddressString {
-public:
-    IpAddressString (std::string addr): _addr{addr} {}
-    bool isValidIpAddressString(){
-        // TODO: write verifying function
-        return false;
-    }
-
-private:
-    std::string _addr;
-};
 
 
 void MainWindow::handle_start_connect(){
