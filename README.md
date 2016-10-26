@@ -15,7 +15,7 @@ sudo apt-get install qt-sdk qtcreator
 
 to build and run tests:
 
-make sure googletest is build:
+make sure googletest is built first:
 
 - cd googletest
 - mkdir build
