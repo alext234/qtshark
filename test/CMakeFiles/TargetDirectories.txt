@@ -1,3 +1,0 @@
-/home/u/qtshark/test/CMakeFiles/edit_cache.dir
-/home/u/qtshark/test/CMakeFiles/rebuild_cache.dir
-/home/u/qtshark/test/CMakeFiles/runtests.dir
