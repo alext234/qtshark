@@ -35,6 +35,7 @@ TEST_F (ServerFixture, GetListOfInterfacesTypical) {
 	.WillOnce(Return(mockJsonResponse.dump()));
 	
 	auto interfaceList = serverOps.getListOfInterfaces();
+	// TODO check the list
 
 
 }

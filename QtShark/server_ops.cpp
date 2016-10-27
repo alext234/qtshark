@@ -15,7 +15,7 @@ vector_str ServerOps::getListOfInterfaces() {
     vector_str intfList ;
 
     auto response = _serverConn->requestUrl ("/get_list_of_interfaces");
-    std::cout<<response<<std::endl;
+    // TODO: parse the response into json
     return intfList;
 
 

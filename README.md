@@ -1,7 +1,7 @@
 # qtshark
 
 
-to build:
+to build
 --------------------------
 install qt-skd 
 
@@ -10,7 +10,6 @@ install qt-skd
 
 build json11
 
-- build json11
 - cd json11
 - mkdir build
 - cmake ..
