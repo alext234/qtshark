@@ -2,9 +2,22 @@
 
 
 to build:
-- make sure qt-skd is installed
+--------------------------
+install qt-skd 
 
-sudo apt-get install qt-sdk qtcreator
+- sudo apt-get install qt-sdk qtcreator
+
+
+build json11
+
+- build json11
+- cd json11
+- mkdir build
+- cmake ..
+- make
+
+
+finally, build qtshark
 
 - mkdir build
 - cd build
@@ -13,9 +26,9 @@ sudo apt-get install qt-sdk qtcreator
 
 
 
-to build and run tests:
-
-make sure googletest is built first:
+Optional
+-----------------------
+build googletest:
 
 - cd googletest
 - mkdir build
