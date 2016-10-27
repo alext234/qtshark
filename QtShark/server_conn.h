@@ -32,6 +32,8 @@ public:
         _ip_address = ip_address;
     }
 
+    virtual std::string requestUrl(std::string url)=0;
+
 
 protected:
     int _port=2304;
