@@ -15,10 +15,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    server_ops.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    ipaddressstring.h \
+    server_conn.h \
+    server_ops.h
 
 FORMS    += mainwindow.ui
-
-

@@ -3,13 +3,16 @@ cmake_minimum_required(VERSION 2.8)
 project(runtests)
 
 set(GOOGLETEST ${CMAKE_SOURCE_DIR}/../googletest/)  
+set(SRC ${CMAKE_SOURCE_DIR}/../QtShark/)  
+
 include_directories(${GOOGLETEST}/googlemock/include ${GOOGLETEST}/googletest/include ../QtShark)
 link_directories(${GOOGLETEST}/build/googlemock ${GOOGLETEST}/build/googlemock/gtest)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++1y -Wall -Wextra -Wno-unused-parameter")
 
 
-add_executable(runtests  main.cpp test_ipaddressstring.cpp)
+include_directories(${GOOGLETEST}/googlemock/include ${GOOGLETEST}/googletest/include ../QtShark)
+add_executable(runtests   ${SRC}/server_ops.cpp main.cpp test_ipaddressstring.cpp test_serverops.cpp)
 target_link_libraries(runtests gmock)
 target_link_libraries(runtests gtest)
 target_link_libraries(runtests pthread)
