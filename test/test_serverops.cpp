@@ -5,6 +5,7 @@
 
 using namespace std;
 using ::testing::Return;                            
+using ::testing::ContainerEq; 
 
 
 class ServerConnMock: public ServerConnInt {
@@ -25,18 +26,25 @@ public:
 	
 };
 
+#include <iostream>
 TEST_F (ServerFixture, GetListOfInterfacesTypical) {
+	// setup mock response
 	using namespace json11;
+
+	vector<string> mockItems{"eth0", "eth1", "eth2"};
+
 	Json mockJsonResponse = Json::object {
     { "count", 3 },
-    { "items", Json::array { "eth0","eth1","eth2"} },};	
+    { "items", Json(mockItems) },};	
 
 	EXPECT_CALL(serverConn, requestUrl ("/get_list_of_interfaces"))
 	.WillOnce(Return(mockJsonResponse.dump()));
+
 	
 	auto interfaceList = serverOps.getListOfInterfaces();
-	// TODO check the list
 
+	EXPECT_THAT (interfaceList, ContainerEq(mockItems));	
+	
 
 }
 
