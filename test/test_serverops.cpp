@@ -34,6 +34,7 @@ TEST_F (ServerFixture, GetListOfInterfacesTypical) {
 	vector<string> mockItems{"eth0", "eth1", "eth2"};
 
 	Json mockJsonResponse = Json::object {
+	{ "is_success", true}, 
     { "count", 3 },
     { "items", Json(mockItems) },};	
 
@@ -49,4 +50,26 @@ TEST_F (ServerFixture, GetListOfInterfacesTypical) {
 }
 
 
+
+TEST_F (ServerFixture, GetListOfInterfacesNotSuccess) {
+	// setup mock response
+	using namespace json11;
+	
+	string mockStatusMsg = "error getting list of interfaces";
+	Json mockJsonResponse = Json::object {
+	{ "is_success", false},
+	{ "status_msg", mockStatusMsg},
+	};	
+
+	EXPECT_CALL(serverConn, requestUrl ("/get_list_of_interfaces"))
+	.WillOnce(Return(mockJsonResponse.dump()));
+
+	
+	auto interfaceList = serverOps.getListOfInterfaces();
+
+	EXPECT_THAT (interfaceList, ContainerEq(vector<string>{}));	 // should be empty
+	
+	
+
+}
 

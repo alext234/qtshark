@@ -26,19 +26,29 @@ vector_str ServerOps::getListOfInterfaces() {
         return intfList;
     }
 
-    auto count= static_cast<size_t>(parsedResponse["count"].int_value());
-    auto items =parsedResponse["items"].array_items();
-    auto numberOfItems = items.size();
+    bool isSuccess= parsedResponse["is_success"].bool_value();
+    if (!isSuccess) {
+        std::string statusMsg =parsedResponse["status_msg"].string_value();
 
-    if (count!=numberOfItems){ // some inconsitency?
+        return intfList ;
+
+    } else {
+        auto count= static_cast<size_t>(parsedResponse["count"].int_value());
+        auto items =parsedResponse["items"].array_items();
+        auto numberOfItems = items.size();
+
+        if (count!=numberOfItems){ // some inconsitency?
+            return intfList;
+        }
+
+        intfList.reserve(count);
+        for(auto &item : items) {
+            intfList.push_back(item.string_value());
+        }
+
         return intfList;
-    }
 
-    intfList.reserve(count);
-    for(auto &item : items) {
-        intfList.push_back(item.string_value());
-    }
 
-    return intfList;
+    }
 
 }
