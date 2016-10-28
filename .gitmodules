@@ -1,3 +1,6 @@
 [submodule "cppobserver"]
 	path = cppobserver
 	url = https://github.com/networkshark/cppobserver.git
+[submodule "googletest"]
+	path = googletest
+	url = https://github.com/alext234/googletest.git
