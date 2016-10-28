@@ -29,6 +29,7 @@ vector_str ServerOps::getListOfInterfaces() {
     bool isSuccess= parsedResponse["is_success"].bool_value();
     if (!isSuccess) {
         std::string statusMsg =parsedResponse["status_msg"].string_value();
+        // TODO: notify InfoEvent observers about the status
 
         return intfList ;
 
