@@ -1,0 +1,3 @@
+[submodule "cppobserver"]
+	path = cppobserver
+	url = https://github.com/networkshark/cppobserver.git
