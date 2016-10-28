@@ -1,5 +1,9 @@
 # qtshark
 
+clone recursively to include submodules
+- git clone --recursive https://github.com/networkshark/qtshark.git
+
+
 
 to build
 --------------------------
