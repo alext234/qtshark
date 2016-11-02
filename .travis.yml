@@ -1,4 +1,4 @@
-disty: xenial
+disty: trusty
 sudo: required
 language: cpp
 
