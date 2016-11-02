@@ -7,7 +7,7 @@ matrix:
     - compiler: gcc
       addons:
         apt:
-          sources: ["ubuntu-toolchain-r-test", "kalakris-cmake"]
+          sources: ["ubuntu-toolchain-r-test", "george-edison55/precise-backports"]
           packages: ["g++-4.9", "cmake"]
       env: COMPILER=g++-4.9
 
