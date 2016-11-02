@@ -26,8 +26,14 @@ script:
   - mkdir build
   - cd build
   - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make
-  - cd ..
-  - cd ..
+  - cd ../..
   - mkdir build
   - cd build
   - qmake QMAKE_CXX=$COMPILER  ../QtShark/QtShark.pro -r && make
+  - cd ..
+  - cd test
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - ./runtests

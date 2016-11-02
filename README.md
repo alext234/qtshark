@@ -45,6 +45,8 @@ build googletest:
 build and run tests
 
 - cd test
-- cmake . 
+- mkdir build
+- cd build
+- cmake ..
 - make
 - ./runtests
