@@ -20,7 +20,7 @@ script:
   - cd json11
   - mkdir build 
   - cd build
-  - cmake .. && make 
+  - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make 
   - cd ../..
   - cd googletest
   - mkdir build
