@@ -45,7 +45,8 @@ install:
 # Build steps
 script:
   - cd json11
-  - mkdir build
+  - mkdir build 
+  - cd build
   - cmake .. && make 
   - cd ../..
   - cd googletest
