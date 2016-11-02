@@ -47,7 +47,7 @@ script:
   - cd json11
   - mkdir build
   - cmake .. && make 
-  - cd ..
+  - cd ../..
   - cd googletest
   - mkdir build
   - cd build
