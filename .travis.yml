@@ -1,3 +1,4 @@
+disty: xenial
 sudo: required
 language: cpp
 
