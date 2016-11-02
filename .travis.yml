@@ -34,6 +34,5 @@ script:
   - cd test
   - mkdir build
   - cd build
-  - cmake ..
-  - make
+  - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. &&  make
   - ./runtests
