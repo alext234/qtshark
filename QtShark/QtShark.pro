@@ -14,9 +14,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = QtShark
 TEMPLATE = app
 
-INCLUDEPATH += $$PWD/../json11
+INCLUDEPATH += $$OUT_PWD/../json11
 
-DEPENDPATH +=$$PWD/json11/../build
+LIBS +="-L$$OUT_PWD/../json11/build" -ljson11
 
 SOURCES += main.cpp\
         mainwindow.cpp \
